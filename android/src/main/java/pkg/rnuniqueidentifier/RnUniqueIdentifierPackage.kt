@@ -1,4 +1,4 @@
-package com.rnuniqueidentifier
+package pkg.rnuniqueidentifier
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule

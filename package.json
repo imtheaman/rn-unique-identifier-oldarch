@@ -1,6 +1,6 @@
 {
-  "name": "rn-unique-identifier",
-  "version": "0.1.0",
+  "name": "rn-unique-identifier-oldarch",
+  "version": "1.0.0",
   "description": "React Native Unique Identifier Package",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -41,12 +41,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imtheaman/rn-unique-identifier.git"
+    "url": "git+https://github.com/imtheaman/rn-unique-identifier-oldarch.git"
   },
   "author": "Aman Kumar <imtheaman@proton.me> (https://github.com/imtheaman)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imtheaman/rn-unique-identifier/issues"
+    "url": "https://github.com/imtheaman/rn-unique-identifier-oldarch/issues"
   },
   "homepage": "https://github.com/imtheaman/rn-unique-identifier#readme",
   "publishConfig": {

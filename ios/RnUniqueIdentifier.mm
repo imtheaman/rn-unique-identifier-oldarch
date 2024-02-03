@@ -3,16 +3,43 @@
 @implementation RnUniqueIdentifier
 RCT_EXPORT_MODULE()
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_EXPORT_METHOD(multiply:(double)a
-                  b:(double)b
-                  resolve:(RCTPromiseResolveBlock)resolve
-                  reject:(RCTPromiseRejectBlock)reject)
-{
-    NSNumber *result = @(a * b);
+RCT_EXPORT_METHOD(getPersistentIdentifier: (RCTResponseSenderBlock)callback) {
+  NSDictionary *keychainQuery = @{
+    (__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
+    (__bridge id)kSecAttrService: @"MyAppDeviceId",
+    (__bridge id)kSecReturnData: @YES
+  };
 
-    resolve(result);
+  CFTypeRef keychainResult = NULL;
+  OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)keychainQuery, &keychainResult);
+
+  if (status == errSecSuccess) {
+    // Device ID found in Keychain, return it
+    NSData *keychainData = (__bridge_transfer NSData *)keychainResult;
+    NSString *deviceId = [[NSString alloc] initWithData:keychainData encoding:NSUTF8StringEncoding];
+    callback(@[deviceId]);
+  } else {
+    // Device ID not found, generate a new one and store it in Keychain
+    NSString *deviceId = [UIDevice currentDevice].identifierForVendor.UUIDString;
+
+    if (!deviceId) {
+      callback(@[deviceId]);
+    }
+
+    NSData *deviceIdData = [deviceId dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *addQuery = @{
+      (__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
+      (__bridge id)kSecAttrService: @"MyAppDeviceId",
+      (__bridge id)kSecValueData: deviceIdData
+    };
+
+    OSStatus addStatus = SecItemAdd((__bridge CFDictionaryRef)addQuery, NULL);
+    if (addStatus == errSecSuccess) {
+      callback(@[deviceId]);
+    } else {
+      callback(@[deviceId]);
+    }
+  }
 }
 
 

@@ -17,6 +17,6 @@ const RnUniqueIdentifier = NativeModules.RnUniqueIdentifier
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return RnUniqueIdentifier.multiply(a, b);
+export function getPersistentIdentifier(callback: (uid: string) => void): void {
+  RnUniqueIdentifier.getPersistentIdentifier(callback);
 }
