@@ -1111,7 +1111,7 @@ PODS:
     - React-jsi (= 0.73.3)
     - React-logger (= 0.73.3)
     - React-perflogger (= 0.73.3)
-  - rn-unique-identifier (0.1.0):
+  - rn-unique-identifier (1.1.0):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1371,7 +1371,7 @@ SPEC CHECKSUMS:
   React-runtimescheduler: aa382ce525689b88459e1181b3649220f175dc31
   React-utils: b22b4a51aa578b3aac1e7c19501c0b9ba358ed79
   ReactCommon: e708b8be8cb317b83e31c6ccfeda8bf6c0d1a2b3
-  rn-unique-identifier: 2be3e01b58b6fbf82a54053072a96c35af7b7f3c
+  rn-unique-identifier: 6636d488189fc1c3b11c33a5c762514cb2d78ed7
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: ff0382b894475dba0b4d2a5fda860bfee5a9afad
 

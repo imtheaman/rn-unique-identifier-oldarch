@@ -11392,10 +11392,11 @@ __metadata:
     pod-install: ^0.1.0
     react: 18.2.0
     react-native: 0.73.3
+    rn-unique-identifier-oldarch: "workspace:^"
   languageName: unknown
   linkType: soft
 
-"rn-unique-identifier-oldarch@workspace:.":
+"rn-unique-identifier-oldarch@workspace:., rn-unique-identifier-oldarch@workspace:^":
   version: 0.0.0-use.local
   resolution: "rn-unique-identifier-oldarch@workspace:."
   dependencies:

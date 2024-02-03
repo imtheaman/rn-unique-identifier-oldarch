@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { getPersistentIdentifier } from 'rn-unique-identifier';
+import { getPersistentIdentifier } from 'rn-unique-identifier-oldarch';
 
 export default function App() {
   const [result, setResult] = React.useState<string>();
